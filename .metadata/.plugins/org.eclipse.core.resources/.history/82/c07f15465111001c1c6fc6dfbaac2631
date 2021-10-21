@@ -1,0 +1,75 @@
+package com.excelDataProvider;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class ExcelDataProvider {
+
+	public Object[][] loginDataProvider() throws IOException  {
+
+		//////////////
+
+		FileInputStream file = null;
+		XSSFWorkbook book = null;
+		Object[][] data = null;
+		XSSFSheet sheet = null;
+		String path = System.getProperty("user.dir");
+
+		///////////// ***** try catch *****/////////////
+		try {
+			file = new FileInputStream(new File(path+"XL-Sheet/logininfo.xlsx"));
+			book = new XSSFWorkbook();
+			sheet = book.getSheetAt(0);
+
+			//
+
+			int rowNum = sheet.getLastRowNum();
+			int cellNum = sheet.getRow(0).getLastCellNum();
+
+			//
+
+			data = new Object[rowNum][cellNum];
+
+			////// ***** Two dimensional loop ****//////////
+
+			for (int r = 1; r < rowNum; r++) {
+				for (int c = 0; c < cellNum; c++) {
+					XSSFCell cell = sheet.getRow(r).getCell(c);
+
+					switch (cell.getCellType()) {
+
+					case XSSFCell.CELL_TYPE_NUMERIC:
+						data[r - 1][c] = cell.getNumericCellValue();
+
+					case XSSFCell.CELL_TYPE_STRING:
+						data[r - 1][c] = cell.getRichStringCellValue();
+
+					default:
+						break;
+					}
+				}
+			}
+
+		} catch (FileNotFoundException e) {
+			System.out.println("ERROR: Login Data file did not found");
+		} catch (IOException e) {
+			System.out.println("ERROR: Check the book parameters");
+		} finally {
+			file.close();
+		}
+
+		//
+
+		return data;
+
+	}
+
+}

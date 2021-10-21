@@ -1,0 +1,13 @@
+package com.bit.util;
+
+import org.testng.annotations.Test;
+
+public class DemoClass {
+	
+	@Test
+	public void testCaseOne() {
+		int a[] = {1,2,3};
+		 System.out.println(a[3]);
+	}
+
+}

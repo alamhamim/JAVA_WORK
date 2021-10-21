@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[chrome is runnig]]>
+    </line>
+    <line>
+      <![CDATA[Passed]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2021-09-01T21:16:55 EDT" name="LoginTest" finished-at="2021-09-01T21:17:07 EDT" duration-ms="12330">
+    <groups>
+    </groups>
+    <test started-at="2021-09-01T21:16:55 EDT" name="Login" finished-at="2021-09-01T21:17:07 EDT" duration-ms="12330">
+      <class name="com.test.LoginTest">
+        <test-method is-config="true" signature="getData()[pri:0, instance:com.test.LoginTest@add0edd]" started-at="2021-09-01T21:16:55 EDT" name="getData" finished-at="2021-09-01T21:16:55 EDT" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getData -->
+        <test-method is-config="true" signature="setUpBrowser()[pri:0, instance:com.test.LoginTest@add0edd]" started-at="2021-09-01T21:16:55 EDT" name="setUpBrowser" finished-at="2021-09-01T21:17:06 EDT" duration-ms="11399" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[chrome is runnig]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setUpBrowser -->
+        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:com.test.LoginTest@add0edd]" started-at="2021-09-01T21:17:06 EDT" name="loginTest" data-provider="loginData" finished-at="2021-09-01T21:17:07 EDT" duration-ms="777" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="screenShot(org.testng.ITestResult)[pri:0, instance:com.test.LoginTest@add0edd]" started-at="2021-09-01T21:17:07 EDT" name="screenShot" finished-at="2021-09-01T21:17:07 EDT" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=LoginTest.loginTest(java.lang.String,java.lang.String)[pri:0, instance:com.test.LoginTest@add0edd] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Passed]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- screenShot -->
+        <test-method is-config="true" signature="doneTesting()[pri:0, instance:com.test.LoginTest@add0edd]" started-at="2021-09-01T21:17:07 EDT" name="doneTesting" finished-at="2021-09-01T21:17:07 EDT" duration-ms="80" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doneTesting -->
+      </class> <!-- com.test.LoginTest -->
+    </test> <!-- Login -->
+  </suite> <!-- LoginTest -->
+</testng-results>

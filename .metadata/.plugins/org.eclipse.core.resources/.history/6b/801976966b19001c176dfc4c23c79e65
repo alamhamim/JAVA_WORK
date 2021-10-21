@@ -1,0 +1,33 @@
+package com.bit.util;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.xml.DOMConfigurator;
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class SeleniumMethod {
+
+	
+	ChromeDriver driver;
+	
+	public void driverMethod() {
+		driver.close(); // this will close the current window
+		driver.findElement(By.id(" ")).click(); // 8 
+		
+		
+		
+	}
+	
+	@Test
+	public void testOne() {
+		DOMConfigurator.configure("log4j.xml");
+		
+		Logger logger = Logger.getLogger(SeleniumHelper.class);
+		logger.fatal("This is fatal");
+		logger.error("This errorS");
+	}
+	
+	
+	
+}
